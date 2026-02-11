@@ -14,7 +14,7 @@ const pool = new Pool({
 
 app.get("/itemList", async (req, res) => {
   try {
-    const itemList = await pool.query("SELECT * FROM ITEM_LIST");
+    const itemList = await pool.query("SELECT * FROM products");
     res.json(itemList.rows);
   } catch (e) {
     console.log(e);
@@ -22,4 +22,5 @@ app.get("/itemList", async (req, res) => {
 });
 
 app.listen(process.env.PORT);
+
 
